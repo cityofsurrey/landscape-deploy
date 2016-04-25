@@ -1,0 +1,27 @@
+{
+  "name": "deploy",
+  "version": "0.0.1",
+  "description": "A command-line tool for deploying MySurrey via Landscape.",
+  "main": "deploy.js",
+  "scripts": {
+    "start": "babel-node deploy.js --help | bunyan"
+  },
+  "author": "Alazhar Shamshuddin",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.0",
+    "commander": "^2.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-eslint": "^6.0.2",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.7.2",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0",
+    "node-print": "0.0.4"
+  }
+}
