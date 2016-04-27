@@ -1,7 +1,12 @@
-dependencies:
-  override:
-    - npm run compile
-
 test:
   override:
-    - echo "There are no tests to run."
+    - echo "There are no tests to run but running npm compile for kicks."
+    - npm run compile
+
+deployment:
+  npm:
+    branch: master
+    commands:
+      # Login using environment variables defined in CircleCI.
+      - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
+      - npm publish .
