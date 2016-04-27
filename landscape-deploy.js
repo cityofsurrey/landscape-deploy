@@ -15,7 +15,7 @@ const execSync = childProcess.execSync
 /**
  * The Bunyan logger.
  */
-const gLog = bunyan.createLogger({ name: 'deploy.js' })
+const gLog = bunyan.createLogger({ name: 'landscape-deploy' })
 
 /*
  * The Docker container through which we execute all our Landscape API calls
@@ -168,7 +168,7 @@ function isEqual(report1, report2) {
 function processCommandLineArgs() {
   program
     .version('0.0.1')
-    .usage('deploy.js --script <id> --tag <name> [--dev]')
+    .usage('--script <id> --tag <name> [--dev]')
     .description('Executes the specified script in Landscape, on a specified ' +
                  'group of servers.')
     .option('-d, --dev',
@@ -182,8 +182,8 @@ function processCommandLineArgs() {
   program.on('--help', () => {
     console.log('  Examples:')
     console.log('')
-    console.log('    $ deploy.js --script 28 --tag ply-servers --dev')
-    console.log('    $ deploy.js --help')
+    console.log('    $ landscape-deploy --script 28 --tag ply-servers --dev')
+    console.log('    $ landscape-deploy --help')
     console.log('')
   })
 

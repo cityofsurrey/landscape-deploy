@@ -1,16 +1,26 @@
 {
-  "name": "deploy",
-  "version": "0.0.1",
-  "description": "A command-line tool for deploying MySurrey via Landscape.",
-  "main": "deploy.js",
-  "scripts": {
-    "start": "babel-node deploy.js --help | bunyan"
-  },
-  "author": "Alazhar Shamshuddin",
+  "name": "landscape-deploy",
+  "version": "0.0.5",
+  "description": "A command-line tool for executing Landscape scripts.",
+  "author": "Alazhar Shamshuddin (ashamshuddin@surrey.ca)",
   "license": "ISC",
+  "private": false,
+  "bin": "./bin/landscape-deploy.js",
+  "bugs": {
+    "url": "https://github.com/CityofSurrey/landscape-deploy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CityofSurrey/landscape-deploy.git"
+  },
+  "scripts": {
+    "compile": "rm -rf bin && babel landscape-deploy.js --out-dir bin/ && sed -i '1 i\\#!/usr/bin/env node' bin/landscape-deploy.js",
+    "prepublish": "npm run compile"
+  },
   "dependencies": {
     "bunyan": "^1.8.0",
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "node-print": "0.0.4"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
@@ -21,7 +31,6 @@
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
-    "eslint-plugin-react": "^4.3.0",
-    "node-print": "0.0.4"
+    "eslint-plugin-react": "^4.3.0"
   }
 }
