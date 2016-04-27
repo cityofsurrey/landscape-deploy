@@ -1,0 +1,7 @@
+dependencies:
+  override:
+    - npm run compile
+
+test:
+  override:
+    - echo "There are no tests to run."
