@@ -9,6 +9,19 @@
   "bugs": {
     "url": "https://github.com/CityofSurrey/landscape-deploy/issues"
   },
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "types": ["feat", "fix", "docs", "style", "refactor", "perf", "test", "chore", "revert"],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "The commit subject does not match the allowed pattern!",
+      "helpMessage": ""
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CityofSurrey/landscape-deploy.git"
@@ -33,6 +46,8 @@
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
-    "publish": "^0.6.0"
+    "ghooks": "^1.2.1",
+    "publish": "^0.6.0",
+    "validate-commit-msg": "^2.6.1"
   }
 }
