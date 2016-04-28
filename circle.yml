@@ -9,4 +9,4 @@ deployment:
     commands:
       # Login using environment variables defined in CircleCI.
       - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
-      - npm run publish
+      - npm run publish2npm
