@@ -3,10 +3,9 @@
  * @author Alazhar Shamshuddin
  */
 import bunyan from 'bunyan'
-import childProcess from 'child_process'
+import { execSync } from 'child_process'
 import program from 'commander'
 import nodePrint from 'node-print'
-const execSync = childProcess.execSync
 
 // -----------------------------------------------------------------------------
 // Global Variables
