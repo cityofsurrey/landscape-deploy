@@ -1,6 +1,6 @@
 {
   "name": "landscape-deploy",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A command-line tool for executing Landscape scripts.",
   "author": "Alazhar Shamshuddin (ashamshuddin@surrey.ca)",
   "license": "ISC",

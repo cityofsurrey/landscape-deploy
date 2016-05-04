@@ -169,7 +169,7 @@ function isEqual(report1, report2) {
  */
 function postSlackNotification(text,
                                username = 'deployment-guru-bot',
-                               channel = '#alazhar-private',
+                               channel = '#bot-mysurrey-alerts',
                                iconEmoji = ':octopus:') {
   const url = 'https://hooks.slack.com/services/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'
 
