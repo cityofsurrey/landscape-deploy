@@ -168,8 +168,8 @@ function isEqual(report1, report2) {
  * @param {string} iconEmoji -  The sender's emoji or user icon.
  */
 function postSlackNotification(text,
-                               username = 'deployment-guru-bot',
-                               channel = '#bot-mysurrey-alerts',
+                               username = 'Deployment Guru Bot',
+                               channel = '#bot-deployments',
                                iconEmoji = ':octopus:') {
   const url = 'https://hooks.slack.com/services/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'
 
