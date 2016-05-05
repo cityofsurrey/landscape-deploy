@@ -171,7 +171,7 @@ function postSlackNotification(text,
                                username = 'deployment-guru-bot',
                                channel = '#bot-mysurrey-alerts',
                                iconEmoji = ':octopus:') {
-  const url = 'https://hooks.slack.com/services/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'
+  const url = 'https://hooks.slack.com/services/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'
 
   let payload = {
     username: `${username}`,
