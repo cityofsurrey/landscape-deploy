@@ -7,12 +7,10 @@ class Scripts {
     this.activities = new Activities(client)
   }
 
-  query() {
-    return new Promise(async (resolve) => {
-      const scripts = await this.client.request('get-scripts')
+  async query() {
+    const scripts = await this.client.request('get-scripts')
 
-      resolve(scripts.map(x => this.parse(x)))
-    })
+    return scripts.map(x => this.parse(x))
   }
 
   /**
@@ -24,14 +22,12 @@ class Scripts {
    *
    * @returns {number} Id of created activity about this activity.
    */
-  execute(id, tag) {
-    return new Promise(async (resolve) => {
-      const response = await this.client.request(`execute-script tag:${tag} ${id}`)
-      const activity = new Activity(response)
-      await this.activities.emitStatus(activity)
+  async execute(id, tag) {
+    const response = await this.client.request(`execute-script tag:${tag} ${id}`)
+    const activity = new Activity(response)
+    await this.activities.emitStatus(activity)
 
-      resolve(activity)
-    })
+    return activity
   }
 
   parse(script) {

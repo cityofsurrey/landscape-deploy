@@ -21,12 +21,6 @@ class Client {
     }
   }
 
-  // request(query) {
-  //   const response = execSync(`${this.command} ${query} --json`)
-
-  //   return JSON.parse(response)
-  // }
-
   request(query) {
     return new Promise((resolve, reject) => {
       exec(`${this.command} ${query} --json`, (err, stdout) => {

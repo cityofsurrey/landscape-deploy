@@ -5,12 +5,10 @@ class Activities {
     this.client = client
   }
 
-  query() {
-    return new Promise(async (resolve) => {
-      const activities = await this.client.request('get-activities')
+  async query() {
+    const activities = await this.client.request('get-activities')
 
-      resolve(activities.map(x => this.parse(x)))
-    })
+    return activities.map(x => this.parse(x))
   }
 
   /**
@@ -47,20 +45,16 @@ class Activities {
    *
    * @returns {array} A list of child activities.
    */
-  queryChildren(parentId) {
-    return new Promise(async (resolve) => {
-      const activities = await this.client.request(`get-activities --query parent-id:${parentId}`)
+  async queryChildren(parentId) {
+    const activities = await this.client.request(`get-activities --query parent-id:${parentId}`)
 
-      resolve(activities.map(x => this.parse(x)))
-    })
+    return activities.map(x => this.parse(x))
   }
 
-  find(id) {
-    return new Promise(async (resolve) => {
-      const activities = await this.client.request(`get-activities --query id:${id}`)
+  async find(id) {
+    const activities = await this.client.request(`get-activities --query id:${id}`)
 
-      resolve(new Activity(activities[0]))
-    })
+    return new Activity(activities[0])
   }
 
   async emitStatus(activity) {

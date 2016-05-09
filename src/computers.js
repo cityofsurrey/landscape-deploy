@@ -34,17 +34,15 @@ class Computers {
    *
    * @returns {array} A list of computers.
    */
-  query(tag) {
-    return new Promise(async (resolve) => {
-      let computers = []
-      if (tag) {
-        computers = await this.client.request(`get-computers --query tag:${tag}`)
-      } else {
-        computers = await this.client.request('get-computers')
-      }
+  async query(tag) {
+    let computers = []
+    if (tag) {
+      computers = await this.client.request(`get-computers --query tag:${tag}`)
+    } else {
+      computers = await this.client.request('get-computers')
+    }
 
-      resolve(computers.map(x => this.parse(x)))
-    })
+    return computers.map(x => this.parse(x))
   }
 
   parse(computer) {
