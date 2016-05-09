@@ -1,12 +1,19 @@
+machine:
+  node:
+    version: 5.7.0
+
+dependencies:
+  override:
+    - npm install
+    - npm run compile
+
 test:
   override:
-    - echo "There are no tests to run but running npm compile for kicks."
-    - npm run compile
+    - npm test
 
 deployment:
   npm:
     branch: master
     commands:
-      # Login using environment variables defined in CircleCI.
       - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
       - npm run publish2npm
