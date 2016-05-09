@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "babel-node ./test/playground.js",
     "compile": "babel src/ --out-dir lib/ && sed -i '1 i\\#!/usr/bin/env node' lib/cli.js",
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "mocha --compilers js:babel-core/register --require babel-polyfill",
     "publish2npm": "npm run compile && publish"
   },
   "author": "Alazhar Shamshuddin <ashamshuddin@surrey.ca>",
