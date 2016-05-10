@@ -1,5 +1,7 @@
 # Landscape Deploy
 
+[![Circle CI](https://circleci.com/gh/cityofsurrey/landscape-node.svg?style=svg&circle-token=f512ac904e398d41a89264d9e0f688c8bb8a4298)](https://circleci.com/gh/cityofsurrey/landscape-node)
+
 Landscape-Deploy contains a Node.js shell script for executing Landscape
 scripts and retrieving their results.
 
