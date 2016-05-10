@@ -53,15 +53,15 @@ function processCommandLineArgs() {
     await reporter.print(activity)
 
     activity.on('status', async () => await reporter.print(activity))
-    activity.on('done', async () => {
+    activity.on('done', async (status) => {
       slacker.post(
         `I have finished deploying using script '${script}' for servers *${tag}*. ` +
         'Here are the details for each server:')
 
       slacker.post(await reporter.text(activity))
 
-      const message = `Deployment completed with status ${activity.activity_status}`
-      if (['succeeded', 'canceled'].includes(activity.activity_status)) {
+      const message = `Deployment completed with status ${status}`
+      if (['succeeded', 'canceled'].includes(status)) {
         log.info(message)
       } else {
         log.error(message)
