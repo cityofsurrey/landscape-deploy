@@ -64,7 +64,7 @@ class Activities {
       setTimeout(() => this.emitStatus(activity), 5000)
     } else {
       activity.activity_status = updatedActivity.activity_status
-      activity.emit('status', activity)
+      activity.emit('status', activity.activity_status)
 
       if (['canceled', 'failed', 'succeeded'].includes(activity.activity_status)) {
         activity.emit('done', activity)

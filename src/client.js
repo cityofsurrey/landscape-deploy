@@ -1,5 +1,5 @@
 import path from 'path'
-import { execSync, exec } from 'child_process'
+import { exec } from 'child_process'
 
 class Client {
   constructor(key, secret, uri, certificate) {
