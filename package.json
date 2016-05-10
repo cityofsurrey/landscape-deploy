@@ -4,7 +4,7 @@
   "description": "A command-line tool for executing Landscape scripts.",
   "main": "./lib/landscape",
   "bin": {
-    "landscape": "./lib/cli"
+    "landscape": "./lib/cli.js"
   },
   "scripts": {
     "dev": "babel-node ./test/playground.js",
