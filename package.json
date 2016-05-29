@@ -1,6 +1,6 @@
 {
   "name": "landscape-node",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A command-line tool for executing Landscape scripts.",
   "main": "./lib/landscape",
   "bin": {
@@ -25,7 +25,8 @@
     "babel-runtime": "^6.9.1",
     "bunyan": "^1.8.1",
     "commander": "^2.9.0",
-    "node-print": "0.0.4"
+    "node-print": "0.0.4",
+    "regenerator-runtime": "^0.9.5"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
